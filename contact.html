@@ -44,6 +44,10 @@
         line-height: 96px;
         color: #000000;
     }
+    nav .logo a{
+        text-decoration: none;
+        color: #000000;
+    }
     .nav-items li{
         list-style: none;
         margin: 50px;
@@ -93,8 +97,7 @@
         height: 300px;
         left: 47px;
         top: 21px;
-        margin-left: 650px;
-        margin-top: -255px;
+        margin-top: -400px;
         background: #212121;
         transform: rotate(-3deg);
         
@@ -111,22 +114,57 @@
     opacity: 1;
     text-align: left;
     }
-    header p{
-        font-style: normal;
-        font-size: 20px;
-        line-height: 28px;
-        width: 418px;
-        margin-bottom: 48px;
+    header h3{
+        width: 619px;
+        color: rgba(0,0,0,1);
+        position: relative;
+        top: 0px;
+        left: 0px;
+        font-family: Roboto;
+        font-weight: Bold;
+        font-size: 32px;
+        opacity: 1;
+        margin-left: 50px;
     }
+    
+    .hero-content{
+        margin-left: 500px;
+        margin-top: -100px;
+    }
+    .hero-content Input[type=text]{
+        position: relative;
+        width: 500px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+    }
+    .hero-content::placeholder{
+        font-size: 30px;
+    }
+    .hero-content textarea{
+        
+        position: relative;
+        width: 500px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+    }
+    .hero-content p{
+        font-size: 23px;
+    }
+
     header a{
         color: white;
         font-size: 24px;
         text-decoration: none;
-
+        margin-left: 330px;
         padding: 10px 45px;
         background: #240803;
         border-radius: 8px;
         display: inline-block;
+        margin-top: 20px;
     }
     header img{
 
@@ -135,8 +173,8 @@
         position: absolute;
         top: 16px;
         left: 19px;
-        margin-left: 680px;
-        margin-top: -250px;
+        margin-left: 30px;
+        margin-top: -400px;
         z-index: 1;
     }
    
@@ -230,11 +268,11 @@
         <div class="navigation">
             <nav>
             <div class="logo">
-                M.E.
+               <a href="index.html">M.E.</a> 
             </div>
             <ul class="nav-items">
                 <li><a href="#"><b>blog</b> </a></li>
-                <li><a href="contact.html"><b>contact</b></a></li>
+                <li><a href="#"><b>contact</b></a></li>
                 <li><a href="#"><b>about</b></a></li>
                 <li>
                     <a class="nav-btn-container" href="#">
@@ -249,9 +287,15 @@
         <div class="wrapper">
             <header>
                 <div class="hero-content">
-                    <h1>Hi! I am MUGISHA</h1>
-                    <p>I design beautiful websites & mobile apps that modern trends demands.</p>
-                    <a href="contact.html">Contact me</a>
+                    <h1>Contact me</h1>
+                    <h3>Fill Out The Form</h3>
+                    <form>
+                        <p><b>Names:</b><input type="text" placeholder="Enter your username" required="required"><br>
+                        <b>E-mail:</b><input type="text" placeholder="Enter your username" required="required"><br>
+                        <b>Comment:<textarea placeholder="Fill your comment here..." rows="2" cols="25"></textarea>
+                            </p>
+                        <a href="submit">Submit</a>
+                    </form>
                 </div>
                 <div class="header-image">
                     <img src="IMG-20220511-WA0003.jpg" >
