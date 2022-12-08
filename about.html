@@ -44,6 +44,10 @@
         line-height: 96px;
         color: #000000;
     }
+    nav .logo a{
+        text-decoration: none;
+        color: #000000;
+    }
     .nav-items li{
         list-style: none;
         margin: 50px;
@@ -83,12 +87,15 @@
         left: 142px;
  
     }
-    header .header-image{
-        position: relative;
+    header .header-image img{
+        position: absolute;
+        border-radius: 50%;
+        margin-top: -90px;
         z-index: 2;
     }
-    header .header-image .photo-bg{
+    header .header-image .photo-bg img{
         position: absolute;
+        border-radius: 50%;
         width: 300px;
         height: 300px;
         left: 47px;
@@ -97,36 +104,36 @@
         margin-top: -255px;
         background: #212121;
         transform: rotate(-3deg);
+        z-index: 1;
         
-    }
-    header h1{
-        width: 619px;
-    color: rgba(0,0,0,1);
-    position: relative;
-    top: 0px;
-    left: 0px;
-    font-family: Roboto;
-    font-weight: Bold;
-    font-size: 64px;
-    opacity: 1;
-    text-align: left;
     }
     header p{
         font-style: normal;
         font-size: 20px;
         line-height: 28px;
         width: 418px;
-        margin-bottom: 48px;
+        margin-top: -70px;
+        
     }
+
+    header h1{
+        width: 619px;
+    color: #672C2C;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-family: Roboto;
+    font-weight: Bold;
+    font-size: 50px;
+    opacity: 1;
+    text-align: left;
+    
+    }
+
     header a{
-        color: white;
+        color: #C87070;
         font-size: 24px;
         text-decoration: none;
-
-        padding: 10px 45px;
-        background: #240803;
-        border-radius: 8px;
-        display: inline-block;
     }
     header img{
 
@@ -160,9 +167,8 @@
         height: 30px;
         margin-top: 450px;
         margin-left: 200px;
+
     }
-
-
     /*This is a hidden search box*/
     .search-box{
         width: 1200px;
@@ -230,7 +236,7 @@
         <div class="navigation">
             <nav>
             <div class="logo">
-                M.E.
+                 <a href="index.html">M.E.</a> 
             </div>
             <ul class="nav-items">
                 <li><a href="#"><b>blog</b> </a></li>
@@ -249,16 +255,20 @@
         <div class="wrapper">
             <header>
                 <div class="hero-content">
-                    <h1>Hi! I am MUGISHA</h1>
-                    <p>I design beautiful websites & mobile apps that modern trends demands.</p>
-                    <a href="contact.html">Contact me</a>
+                    
+                    <p>What Do I Do?</p>
+                    
+                    <h1>We work together to learn smart way of to build a bright future with you guys</h1>
+
+                    <a href="anothercontact.html">Wanna know the person you’re working with?</a>
                 </div>
                 <div class="header-image">
-                    <img src="IMG-20220511-WA0003.jpg" >
+                    <img src="photo2.jpg" >
                     <div class="photo-bg"></div>
                 </div>
             </header>
            <div class="social">
+            
                <a href="instagram.com"><img class="instagram" src="instagram (1).png" ><b>mugisha_nova</b></a>
            </div>
                 

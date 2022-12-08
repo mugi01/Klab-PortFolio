@@ -13,6 +13,7 @@
         }
     body{
         font-family: roboto;
+        background-image: url(background.jpg);
         }
     .nav-container{
         height: 72px;
@@ -44,6 +45,10 @@
         line-height: 96px;
         color: #000000;
     }
+    nav .logo a{
+        text-decoration: none;
+        color: #000000;
+    }
     .nav-items li{
         list-style: none;
         margin: 50px;
@@ -57,6 +62,14 @@
         font-family: poppins, sans-serif;
         text-decoration: none;
     }
+    /* I'm going for header part*/
+    
+    .header-container{
+        background: #FF6347;
+        height: calc(100vh - 72px);
+        display: flex;
+        align-items: center;
+    }
     .search{
         width: 30px;
         height: 30px;
@@ -67,103 +80,6 @@
         margin-left: -20px;
     }
 
-    /* I'm going for header part*/
-    
-    .header-container{
-        background: #FF6347;
-        height: calc(100vh - 72px);
-        display: flex;
-        align-items: center;
-    }
-    header{
-        width: 620px;
-        height: 295px;
-        position: absolute;
-        top: 262px;
-        left: 142px;
- 
-    }
-    header .header-image{
-        position: relative;
-        z-index: 2;
-    }
-    header .header-image .photo-bg{
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        left: 47px;
-        top: 21px;
-        margin-left: 650px;
-        margin-top: -255px;
-        background: #212121;
-        transform: rotate(-3deg);
-        
-    }
-    header h1{
-        width: 619px;
-    color: rgba(0,0,0,1);
-    position: relative;
-    top: 0px;
-    left: 0px;
-    font-family: Roboto;
-    font-weight: Bold;
-    font-size: 64px;
-    opacity: 1;
-    text-align: left;
-    }
-    header p{
-        font-style: normal;
-        font-size: 20px;
-        line-height: 28px;
-        width: 418px;
-        margin-bottom: 48px;
-    }
-    header a{
-        color: white;
-        font-size: 24px;
-        text-decoration: none;
-
-        padding: 10px 45px;
-        background: #240803;
-        border-radius: 8px;
-        display: inline-block;
-    }
-    header img{
-
-        width: 300px;
-        height: 300px;
-        position: absolute;
-        top: 16px;
-        left: 19px;
-        margin-left: 680px;
-        margin-top: -250px;
-        z-index: 1;
-    }
-   
-    /* Social meadia icons */
-    .social-icons{
-        width: 50px;
-        height: 5px;
-    position: absolute;
-    top: 693px;
-    left: 158px;
-    
-    }
-    .social a{
-        list-style: none;
-        color: #000000;
-        text-decoration: none;
-        font-size: 28px;
-    }
-    .instagram{
-        width: 30px;
-        height: 30px;
-        margin-top: 450px;
-        margin-left: 200px;
-    }
-
-
-    /*This is a hidden search box*/
     .search-box{
         width: 1200px;
         margin: 0 auto;
@@ -219,6 +135,80 @@
         transform: translateY(0);
     }
 
+    .container{
+        width: 30%;
+        height: 50vh;
+        background-position: center;
+
+        background-size: cover;
+        justify-content: center;
+        margin-left: 450px;
+    }
+    .profile-box{
+        background: #A65749;
+        text-align: center;
+        padding: 40px 90px;
+        color: white;
+        position: relative;
+        border-radius: 20px;
+    }
+    .menu-icon{
+        width: 25px;
+        position: absolute;
+        left: 40px;
+        top: 40px;
+    }
+    .setting-icon{
+        width: 25px;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+    }
+    .profile-pic{
+        width: 150px;
+        border-radius: 50%;
+        background: #fff;
+        padding: 6px;
+        margin-top: 40px;
+    }
+    .social-media img{
+        width: 30px;
+        align-items: center;
+        margin: 30px 5px;
+        cursor: pointer;
+    }
+    .profile-bottom{
+        background: #fff;
+        color: #999;
+        padding: 60px 0;
+        margin-right: -90px;
+        margin-left: -90px;
+        margin-bottom: -40px;
+        border-radius: 20px;
+        margin-top: -10px;
+    }
+    .profile-bottom img{
+        width: 30px;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+     button{
+        background: #fff;
+        color: #ff574a;
+        border: none;
+        outline: none;
+        box-shadow: 0 5px 10px rgba(244, 67, 54, 0.5);
+        padding: 15px 60px;
+        cursor: pointer;
+        border-radius: 30px;
+        margin-bottom: -50px;
+        font-weight: 600;
+    }
+    .profile-box h3{
+        font-size: 22px;
+        margin-top: 20px;
+        font-weight: 500;
+    }
 
     </style>
 </head>
@@ -230,12 +220,12 @@
         <div class="navigation">
             <nav>
             <div class="logo">
-                M.E.
+                <a href="index.html">M.E.</a> 
             </div>
             <ul class="nav-items">
                 <li><a href="#"><b>blog</b> </a></li>
                 <li><a href="contact.html"><b>contact</b></a></li>
-                <li><a href="about.html"><b>about</b></a></li>
+                <li><a href="#"><b>about</b></a></li>
                 <li>
                     <a class="nav-btn-container" href="#">
                     <img class="search" src="magnifying-glass.png">
@@ -245,26 +235,29 @@
             </ul>
     </div>
 
-    <div class="header-container">
-        <div class="wrapper">
-            <header>
-                <div class="hero-content">
-                    <h1>Hi! I am MUGISHA</h1>
-                    <p>I design beautiful websites & mobile apps that modern trends demands.</p>
-                    <a href="contact.html">Contact me</a>
-                </div>
-                <div class="header-image">
-                    <img src="IMG-20220511-WA0003.jpg" >
-                    <div class="photo-bg"></div>
-                </div>
-            </header>
-           <div class="social">
-               <a href="instagram.com"><img class="instagram" src="instagram (1).png" ><b>mugisha_nova</b></a>
-           </div>
-                
-         
-        </nav>
+ </nav>
         </div>
     </div>   
+
+
+    <div class="container">
+        <div class="profile-box">
+            <img src="list.png" class="menu-icon">
+            <img src="gear.png" class="setting-icon">
+            <img src="UR 1.jpg" class="profile-pic">
+            <h3>Elisa MUGISHA</h3>
+            <P>Web Developer At Kigali, RWANDA</P>
+        <div class="social-media">
+            <img src="instagram (1).png" >
+            <img src="gmail.png" >
+            <img src="github.png" >
+            </div>
+            <button type="button">Follow</button>
+            <div class="profile-bottom">
+                <p>Learn more About My Profile</p>
+                <img src="down-arrow.png">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
