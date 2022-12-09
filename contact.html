@@ -258,6 +258,57 @@
     }
 
 
+    .contact-area{
+        position: relative;
+        min-height: 100vh;
+        padding: 50px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .contact-area .content {
+        max-width: 800px;
+        text-align: center;
+    }
+    .contact-area .content h1{
+        font-size: 36px;
+        font-weight: 500;
+        color: white;
+    }
+    .contact-area .content p{
+        font-size: 36px;
+        font-weight: 500;
+        color: white;
+    }
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .container .contactInfo{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .container .contactInfo .box{
+        position: relative;
+        padding: 20px 0;
+    }
+    .container .contactInfo .box .icon{
+        min-width: 60px;
+        height: 60px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%
+        font-size: 22px;
+    }
+
     </style>
 </head>
 <body>
@@ -297,10 +348,40 @@
                         <a href="submit">Submit</a>
                     </form>
                 </div>
-                <div class="header-image">
-                    <img src="IMG-20220511-WA0003.jpg" >
-                    <div class="photo-bg"></div>
-                </div>
+                
+
+                <section class="contact-area">
+                    <div class="content">
+                        <h1>Contact Me</h1>
+                        <p>Via the following platform</p>
+                    </div>
+                    <div class="container">
+                        <div class="contactInfo">
+                            <div class="box">
+                                <div class="icon"></div>
+                                <h3>Location</h3>
+                                 <p>Kigali, RWANDA <br> Nyarugenge <br>Norksen </p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                                <div class="icon"></div>
+                                <h3>Phone</h3>
+                                 <p>(+250) 780 123 456</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                                <div class="icon"></div>
+                                <h3>Email</h3>
+                                 <p>mugishael07@gmail.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
             </header>
            <div class="social">
                <a href="instagram.com"><img class="instagram" src="instagram (1).png" ><b>mugisha_nova</b></a>
