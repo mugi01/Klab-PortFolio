@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale= 1.0">
+	<title>MUGISHA PortFolio</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "poppins", sans-serif;
+		}
+		body{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background: #191919;
+		}
+		.Form{
+			width: 400px;
+			height: 590px;
+			background: #fff;
+			text-align: center;
+			border-radius: 1rem;
+			padding: 40px 30px 50px 30px;
+		}
+		h2{
+			font-size: 35px;
+			font-weight: 600;
+			margin-bottom: 40px;
+			color: #191919;
+			position: relative;
+		}
+		h2::after{
+			content: '';
+			width: 60px;
+			height: 4px;
+			border-radius: 3px;
+			background: #191919;
+			position: absolute;
+			bottom: -12px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.form i{
+			color: #999;
+			font-size: 90%;
+		}
+		input, select{
+			height: 40px;
+			width: 100%;
+			outline: none;
+			padding: 0 40px;
+			font-size: 18px;
+			border: 1px solid #bfbfbf;
+			border-bottom-width: 2px;
+			border-radius: 15px;
+		}
+		form input::placeholder{
+			color: #bfbfbf;
+			font-size: 17px;
+		}
+		form input[type="submit"]{
+			width: 50%;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			background: #f9004d;
+			transition: background 0.2s ease;
+			border-radius: 20px;
+		}
+		.error{
+			color: red;
+			font-size: 90%;
+		}
+		.input-1{
+			background-image: url(UR 1.jpg);
+			background-repeat: no-repeat;
+			background-position: right 10px center;
+			border: 1px solid #01cc40;
+		}
+		.input-2{
+			background-image: url(UR 1.jpg);
+			background-repeat: no-repeat;
+			background-position: right 10px center;
+			border: 1px solid red;
+		}
+		.input-3{
+			border: 1px solid #01cc40;
+		}
+		.input-4{
+			border: 1px solid red;
+		}
+	</style>
+
+</head>
+<body>
+
+	<form class="Form" onsubmit="return validateForm()">
+		<h2>SignUp</h2>
+		<div class="box">
+			<input type="text" placeholder="Full Names" name="name" id="name">
+			<div class="error" id="nameErr"></div>
+		</div><br>
+
+		<div class="box">
+			<select>
+				<option>Choose The Language To communicate</option>
+				<option>Kinyarwanda</option>
+				<option>English</option>
+				<option>Francais</option>
+				<option>Swahili</option>
+				<option>Spanish</option>
+				<option>Arabic</option>
+
+			</select>
+			<div class="error" id="languageErr"></div>
+		</div><br>
+
+		<div class="box">
+			<input type="text" placeholder="Phone Number" name="mobile" id="mobile" maxlength="10">
+			<div class="error" id="mobileErr"></div>
+		</div><br>
+
+		<div class="box">
+			<input type="text" placeholder="Create Your Email" name="email" id="email">
+			<div class="error" id="emailErr"></div>
+		</div><br>
+
+		<div class="box">
+			<input type="password" placeholder="Create Your password" name="password" id="password">
+			<div class="error" id="passwordErr"></div>
+		</div><br>
+
+		<div class="box">
+			<input type="password" placeholder="Re-Enter Your password" name="password" id="password">
+			<div class="error" id="passwordErr"></div>
+		</div><br>
+
+		<div class="box">
+			<input type="submit" value="Submit"/>
+		</div>
+
+
+	</form>
+
+
+<script>
+	function printError(Id, Msg){
+		document.getElementById(Id).InnerHtml = Msg;
+	}
+	function validateForm(){
+		var name = document.Form.name.value;
+		var language = document.Form.language.value;
+		var mobile = document.Form.mobile.value;
+		var email = document.Form.email.value;
+		var password = document.Form.password.value;
+
+		var nameErr = languageErr = mobileErr = emailErr = passwordErr = true;
+
+		if (name == "") {
+			printErr("nameErr", "Enter Your Names");
+			var elem = document.getElementById("name");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+		}else{
+			var regex = /^[a-zA-Z\s]+$/;
+			if (regex.test(name) === false) {
+			printErr("nameErr", "Enter a Valid Name");
+			var elem = document.getElementById("name");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+		}else{
+			printErr("nameErr", "");
+			nameErr = false;
+			var elem = document.getElementById("name");
+			elem.classList.add("input-1");
+			elem.classList.remove("input-2");
+			}
+		}
+
+		if (email == "") {
+			printErr("emailErr", "Enter Your Email Address");
+			var elem = document.getElementById("email");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+		}else{
+			var regex = /^S+@S+\.\S+$/;
+			if (regex.test(email) === false) {
+			printErr("emailErr", "Enter a Valid Email Address");
+			var elem = document.getElementById("email");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+		}else{
+			printErr("emailErr", "");
+			emailErr = false;
+			var elem = document.getElementById("email");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+
+
+		if (mobile == "") {
+			printErr("mobileErr", "Enter Your Phone Number");
+			var elem = document.getElementById("mobile");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+		}else{
+			var regex = /^[1-9]\d[9]+$/;
+			if (regex.test(mobileErr) === false) {
+			printErr("mobileErr", "Enter a Valid Phone Number");
+			var elem = document.getElementById("mobile");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+		}else{
+			printErr("mobileErr", "");
+			mobileErr = false;
+			var elem = document.getElementById("mobile");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+
+		if (email == "") {
+			printErr("emailErr", "Enter Your Email Address");
+			var elem = document.getElementById("email");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+		}else{
+			var regex = /^S+@S+\.\S+$/;
+			if (regex.test(email) === false) {
+			printErr("emailErr", "Enter a Valid Email Address");
+			var elem = document.getElementById("email");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+		}else{
+			printErr("emailErr", "");
+			nameErr = false;
+			var elem = document.getElementById("email");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+
+		if (mobile == "") {
+			printErr("mobileErr", "Enter Your Phone Number");
+			var elem = document.getElementById("mobile");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+		}else{
+			var regex = /^[1-9]\d[9]+$/;
+			if (regex.test(mobile) === false) {
+			printErr("mobileErr", "Enter a Valid 10 Digit Phone Number");
+			var elem = document.getElementById("mobile");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+		}else{
+			printErr("mobileErr", "");
+			nameErr = false;
+			var elem = document.getElementById("mobile");
+			elem.classList.add("input-2");
+			elem.classList.remove("input-1");
+			}
+
+		if (language == "select") {
+			printErr("languageErr", "Enter Your Preferrable language");
+			var elem = document.getElementById("email");
+			elem.classList.add("input-4");
+			elem.classList.remove("input-3");
+		}else{
+			printErr("languageErr", "");
+			languageErr = false;
+			var elem = document.getElementById("language");
+			elem.classList.add("input-3");
+			elem.classList.remove("input-4");
+		}
+
+		if ((nameErr || mobileErr || languageErr || emailErr) == true) {
+			return false;
+		}
+	};
+
+</script>
+
+
+</body>
+</html>	

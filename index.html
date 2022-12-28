@@ -1,270 +1,674 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>MUGISHA's PortFolio</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale= 1.0">
+	<title>mugisha's PortFolio</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
 
-    *{
-        margin: 0;
-        box-shadow: border-box;
-        }
-    body{
-        font-family: roboto;
-        }
-    .nav-container{
-        height: 72px;
-        background: #FFFFFA;
-        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-        margin-top: -65px;
-        z-index: 500;
-        position: relative;
+	<style>
+		
+	/*--------------------For Navigation-------------------------*/
+	:root{
+		--darkpink: #f9004d;
+	}
+	*{
+		padding: 0;
+		margin: 0;
+		font-family: josefin Sans,Sans-serif;
+		box-sizing: border-box;
+		text-decoration: none;
+		outline: none;
+		border: none;
+		text-transform: capitalize;
+		transition: all .2s linear;
+	}
+	*::selection{
+		background: var(--darkpink);
+		color: #333;
+	}
+	html{
+		font-size: 62.5%;
+		overflow-x: hidden;
+	}
+	html::-webkit-scrollbar{
+		background: blue;
+	}
+	html::-webkit-scrollbar-track{
+		background: #333;
+	}
+	html::-webkit-scrollbar-thumb{
+		background: tomato;
+	}
 
-    }
-    .navigation{
-        width: 1200px;
-        margin: 0 auto;
-    }
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 72px;
-    }
-    nav ul{
-        display: flex;
-    }
-    nav .logo{
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 64px;
-        line-height: 96px;
-        color: #000000;
-    }
-    .nav-items li{
-        list-style: none;
-        margin: 50px;
-    }
-    .nav-items li: nth-last-of-type(1){
-        margin: 0;
-    }
-    .nav-items li a{
-        color: #000000;
-        font-size: 24px;
-        font-family: poppins, sans-serif;
-        text-decoration: none;
-    }
-    .search{
-        width: 30px;
-        height: 30px;
-    }
-    .close{
-        width: 30px;
-        height: 30px;
-        margin-left: -20px;
-    }
+	body{
+		background: #111;
+		overflow-x: hidden;
+		padding-left: 35rem; 
+	}
+	section{
+		min-height: 100vh;
+		padding: 1rem; 
+	}
+	.btn{
+		padding: .7rem 3rem;
+		background: var(--darkpink);
+		color: white;
+		cursor: pointer;
+		margin-top: 1rem;
+		font-size: 2rem;
+		border-radius: 5rem; 
+		border: 3px solid #333;
+	}
+	.btn:hover{
+		background: #333;
+		border: 2.5px solid var(--darkpink);
+	}
+	.btn i{
+		padding: 0 .5rem;
+		font-size: 1.8rem;
+	}
+	.heading{
+		text-align: center;
+		margin: 0 6rem;
+		font-size: 4rem;
+		padding: 1rem;
+		border-bottom: .1rem solid #fff4;
+		color: white;
+	}
 
-    /* I'm going for header part*/
-    
-    .header-container{
-        background: #FF6347;
-        height: calc(100vh - 72px);
-        display: flex;
-        align-items: center;
-    }
-    header{
-        width: 620px;
-        height: 295px;
-        position: absolute;
-        top: 262px;
-        left: 142px;
- 
-    }
-    header .header-image{
-        position: relative;
-        z-index: 2;
-    }
-    header .header-image .photo-bg{
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        left: 47px;
-        top: 21px;
-        margin-left: 650px;
-        margin-top: -255px;
-        background: #212121;
-        transform: rotate(-3deg);
-        
-    }
-    header h1{
-        width: 619px;
-    color: rgba(0,0,0,1);
-    position: relative;
-    top: 0px;
-    left: 0px;
-    font-family: Roboto;
-    font-weight: Bold;
-    font-size: 64px;
-    opacity: 1;
-    text-align: left;
-    }
-    header p{
-        font-style: normal;
-        font-size: 20px;
-        line-height: 28px;
-        width: 418px;
-        margin-bottom: 48px;
-    }
-    header a{
-        color: white;
-        font-size: 24px;
-        text-decoration: none;
+	header{
+		position: fixed;
+		top: 0; left: 0;
+		z-index: 1000;
+		height: 100%;
+		width: 35rem;
+		background: #1a1a1a;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+	}
+	header .user img{
+		height: 17rem;
+		width: 17rem;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-bottom: 1rem;
+		border: .7rem solid var(--darkpink);
+	}
+	header .user .name{
+		font-size: 3.5rem;
+		color: white;
+	}
+	header .user .post{
+		font-size: 2rem;
+		color: #eee;
+	}
+	header .nav-bar{
+		width: 100%;
+	}
+	header .nav-bar ul{
+		list-style: none;
+		padding: 1rem 3rem;
+	}
+	header .nav-bar ul li a{
+		display: block;
+		padding: 1rem;
+		margin: 1.5rem 0;
+		background: #333;
+		color: white;
+		font-size: 2rem;
+		border-radius: 5rem;
+		text-align: center;
+	}
+	header .nav-bar ul li a:hover{
+		background: var(--darkpink);
+	}
+	span{
+		color: #f9004d;
+	}
 
-        padding: 10px 45px;
-        background: #240803;
-        border-radius: 8px;
-        display: inline-block;
-    }
-    header img{
-
-        width: 300px;
-        height: 300px;
-        position: absolute;
-        top: 16px;
-        left: 19px;
-        margin-left: 680px;
-        margin-top: -250px;
-        z-index: 1;
-    }
-   
-    /* Social meadia icons */
-    .social-icons{
-        width: 50px;
-        height: 5px;
-    position: absolute;
-    top: 693px;
-    left: 158px;
-    
-    }
-    .social a{
-        list-style: none;
-        color: #000000;
-        text-decoration: none;
-        font-size: 28px;
-    }
-    .instagram{
-        width: 30px;
-        height: 30px;
-        margin-top: 450px;
-        margin-left: 200px;
-    }
-
-
-    /*This is a hidden search box*/
-    .search-box{
-        width: 1200px;
-        margin: 0 auto;
-        text-align: right;
-        position: relative;
-        top: 0;
-        margin-right: 110px;
-
-        transition: 300ms;
-    }
-    .search-box .active{
-        top: 72px;
-    }
-    .search-box input{
-        background: white;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-        border-radius: 0px 0px 8px 8px;
-        font-size: 24px;
-        line-height: 42px;
-        border: 0;
-        padding: 10px 44px;
-    }
-    .search-box::placeholder{
-        color: #b3b3b3;
-    }
-
-     /*This is a hidden search box*/
-    .nav-btn-container{
-        display: flex;
-        position: relative;
-    }
-    .nav-btn-container img{
-        position: absolute;
-    }
-    .nav-btn-container .close{
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-8px);
-        transition: 300ms;
-    }
-    .nav-btn-container .search{
-        pointer-events: auto;
-        transition: 300ms;
-    }
-    .nav-btn-container .active .search{
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-8px);
-    }
-    .nav-btn-container .active .close{
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-    }
+	#menu{
+		position: fixed;
+		top: 2rem; right: 2rem;
+		background: #333;
+		color: white;
+		cursor: pointer;
+		font-size: 2.5rem;
+		padding: 1rem 1.5rem;
+		z-index: 1000;
+		display: none;
+	}
+	.home{
+		display: flex;
+		justify-content: center;
+		flex-flow: column;
+		padding: 0 15rem;
+	}
+	.home h3{
+		font-size: 2.5rem;
+		color: white;
+	}
+	.home h1{
+		font-size: 5rem;
+		color: white;
+	}
+	.home p{
+		font-size: 2rem;
+		color: white;
+		padding: 1rem 0;
+	}
+	.newsletter form{
+		width: 380px;
+		max-width: 100%;
+		position: relative;
+	}
+	.newsletter form input:first-child{
+		display: inline-block;
+		width: 100%;
+		padding: 14px 130px 14px 15px;
+		border: 2px solid #f9004d;
+		outline: none;
+		border-radius: 30px;
+	}
+	.newsletter form input:last-child{
+		position: absolute;
+		display: inline-block;
+		outline: none;
+		border: none;
+		padding: 10px 30px;
+		background: #f9004d;
+		color: white;
+		box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+		border-radius: 30px;
+		top: 6px;
+		right: 6px;
+		cursor: pointer;
+	}
 
 
-    </style>
+
+	.about .row{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 1rem 0;
+	}
+	.about .row .info{
+		flex:1 1 48rem;
+		padding: 2rem 1rem;
+		padding-left: 6rem;
+	}
+	.about .row .info h3{
+		font-size: 2rem;
+		color: var(--darkpink);
+		padding: 1rem 0;
+		font-weight: normal;
+	}
+	.about .row .info h3 span{
+		color: #eee;
+		padding: 0 .5rem;
+	}
+	.about .box-container{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: 1rem 0;
+		padding-left: 3rem;
+	}
+	.about .box-container .box{
+		width: 27rem;
+		margin: 4rem 1rem;
+		padding-left: 4rem;
+		border-left: .2rem solid white;
+		position: relative;
+	}
+	.about .box-container .box span{
+		font-size: 1.3rem;
+		background: #222;
+		color: white;
+		border-radius: 5rem;
+		padding: .5rem 2.5rem;
+	}
+	.about .box-container .box h3{
+		font-size: 2rem;
+		color: white;
+		padding-top: 1.5rem;
+	}
+	.about .box-container .box p{
+		font-size: 1.4rem;
+		color: white;
+		padding: 1rem 0;
+	}
+	.about .box-container .box i{
+		font-size: 2rem;
+		color: white;
+		position: absolute;
+		top: -1.5rem; left: -2.5rem;
+		height: 5rem; width: 5rem;
+		border-radius: 50%;
+		line-height: 5rem;
+		text-align: center;
+		background: var(--darkpink);
+	}
+	.box .button{
+		background: #f9004d;
+		color: white;
+		text-decoration: none;
+		border: 2px solid transparent;
+		font-weight: bold;
+		padding: 13px 30px;
+		border-radius: 30px;
+		transition: .4s;
+	}
+	.box .button:hover{
+		background: transparent;
+		border: 2px solid #f9004d;
+		cursor: pointer;
+	}
+
+
+	.blog .box-container{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 2rem 0;
+	}
+	.blog .box-container .box{
+		height: 20rem;
+		width: 26rem;
+		border-radius: 1rem;
+		margin: 2rem;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.blog .box-container .box img{
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	.blog .box-container .box:hover img{
+		transform: scale(1.2);
+	}
+
+	.contact .row{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.contact .row .content{
+		flex: 1 1 30rem;
+		padding: 4rem;
+		margin: 2rem;
+		padding-bottom: 0;
+	}
+	.contact .row form{
+		flex: 1 1 45rem;
+		padding: 2rem;
+		margin: 2rem;
+		margin-bottom: 4rem;
+	}
+	.contact .row form .box{
+		padding: 1.5rem;
+		margin: 1rem 0;
+		background: #3333;
+		color: white;
+		text-transform: none;
+		font-size: 1.7rem;
+		width: 100%;
+		border-radius: 0.8rem;
+	}
+	.contact .row form .box::placeholder{
+		text-transform: capitalize;
+	}
+	.contact .row form .message{
+		height: 15rem;
+		resize: none;
+	}
+	.contact .row form .button{
+		background: #f9004d;
+		color: white;
+		text-decoration: none;
+		border: 2px solid transparent;
+		font-weight: bold;
+		padding: 13px 30px;
+		border-radius: 30px;
+		transition: .4s;
+	}
+	.contact .row form .button:hover{
+		background: transparent;
+		border: 2px solid #f9004d;
+		cursor: pointer;
+	}
+	.contact .row .content h3{
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+		color: #eee;
+		padding: 1rem 0;
+		font-weight: normal;
+	}
+	.contact .row .content .info h3{
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+		color: #eee;
+		padding: 1rem 0;
+		font-weight: normal;
+	}
+	.contact .row .content .info h3 i{
+		padding-right: 1rem;
+		color: var(--darkpink);
+	}
+
+
+	footer{
+		position: relative;
+		width: 100%;
+		height: 400px;
+		background: #101010;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	footer p:nth-child(1){
+		font-size: 30px;
+		color: white;
+		margin-bottom: 20px;
+		font-weight: bold;
+	}
+	footer p:nth-child(2){
+		color: white;
+		font-size: 17px;
+		width: 500px;
+		text-align: center;
+		line-height: 26px;
+	}
+	.social{
+		display: flex;
+	}
+	.social a{
+		width: 45px;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		background: #f9004d;
+		border-radius: 50%;
+		margin: 22px 10px;
+		color: white;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	.social a:hover{
+		transform: scale(1.3);
+		transition: .3s;
+	}
+	.social i{
+		width: 10%;
+		margin-left: 13px;
+	}
+
+
+	.end{
+		position: absolute;
+		color: #f9004d;
+		bottom: 35px;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+/*--------------------For Media Querries-------------------------*/
+
+	@media (max-width: 1200px){
+		html{
+		font-size: 55%;
+		}
+		.home{
+			padding: 1rem 4rem;
+		}
+	}
+	@media (max-width: 991px){
+		header{
+		left: -120%;
+	}
+	#menu{
+		display: block;
+	}
+	}
+	@media (max-width: 768px){
+		html{
+		font-size: 50%;
+		}
+		body{
+			padding: 0;
+		}
+
+	}
+	@media (max-width: 450px){
+		header{
+		width: 100vw;
+		}
+		.heading{
+			margin: 0 3rem;
+		}
+		.about .row .box{
+			width: 100%;
+		}
+		.about .box-container .box{
+			width: 100%;
+		}
+		.blog .box-container .box{
+		width: 100%;
+		}
+		.contact .row form{
+			margin: 3rem 0;
+		}
+		.contact .row .content .info{
+			width: 100%;
+		}
+	}
+
+	</style>
+
 </head>
 <body>
-    <div class="search-box">
-        <input type="text" placeholder="Search here...">
-    </div>
-    <div class="nav-container">
-        <div class="navigation">
-            <nav>
-            <div class="logo">
-                M.E.
-            </div>
-            <ul class="nav-items">
-                <li><a href="#"><b>blog</b> </a></li>
-                <li><a href="contact.html"><b>contact</b></a></li>
-                <li><a href="about.html"><b>about</b></a></li>
-                <li>
-                    <a class="nav-btn-container" href="#">
-                    <img class="search" src="magnifying-glass.png">
-                    <img class="close" src="cancel.png"> 
-                    </a>
-                </li>
-            </ul>
-    </div>
 
-    <div class="header-container">
-        <div class="wrapper">
-            <header>
-                <div class="hero-content">
-                    <h1>Hi! I am MUGISHA</h1>
-                    <p>I design beautiful websites & mobile apps that modern trends demands.</p>
-                    <a href="contact.html">Contact me</a>
-                </div>
-                <div class="header-image">
-                    <img src="IMG-20220511-WA0003.jpg" >
-                    <div class="photo-bg"></div>
-                </div>
-            </header>
-           <div class="social">
-               <a href="instagram.com"><img class="instagram" src="instagram (1).png" ><b>mugisha_nova</b></a>
-           </div>
-                
-         
-        </nav>
-        </div>
-    </div>   
+	<!--------------------HTML Form Navigation bar------------------------->
+
+	<header>
+		<div class="user">
+			<img src="IMG-20220511-WA0003.jpg">
+			<h3 class="name"><span>Elisa</span> MUGISHA</h3>
+			<p class="post">Web Developper</p>
+		</div>
+
+		<nav class="nav-bar">
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#blog">blog</a></li>
+				<li><a href="#contact"><i class="fa fa-phone"></i>  Contact</a></li>
+				<li><a href="signin.html"><i class="fas fa-user"></i>  Login</a></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<!--------------------HTML Form editing------------------------->
+
+	<div id="menu" class="fas fa-bars"></div>					
+
+	<!--------------------HTML Home Section------------------------->
+
+	<section class="home" id="home">
+		<h3><span>Hi</span> There!</h3>
+		<h1>I'm <span>MUGISHA</span></h1>
+		<p>I'm On a Speedy Journey Of Making The World Better In This Field Of Web-Development.Are You Ready To Join Me In a Remarkable Adventure?</p>
+		<a href="#about"><button class="btn">About Me <i class="fas fa-user"></i> </button></a><br><br>
+		<div class="newsletter">
+
+				<form>
+					<input type="email" name="email" id="mail" placeholder="Enter Your Email" required="required">
+					<input type="submit" value="Let's Start">
+				</form>
+			</div>
+	</section>
+
+	<!--------------------HTML Home Section------------------------->
+
+	<section class="about" id="about">
+		<h1 class="heading"> About <span>Me</span> </h1>
+		<div class="row">
+			<div class="info">
+				<h3> <span> Name : </span> Elisa MUGISHA </h3>
+				<h3> <span> Age : </span> 20 </h3>
+				<h3> <span> Qualification : </span> B. In COMPUTER Science </h3>
+				<h3> <span> Post : </span> Web-Developper </h3>
+				<a href="#"><button class="btn">Download CV <i class="fas fa-download"></i></button></a>
+			</div>
+		</div>
+		<h1 class="heading"> Other <span>Profile</span> </h1>		<div class="box-container">
+
+			<div class="box">
+				<i class="fas fa-bars"></i>
+			<span>The Profile</span>
+			<h3>Ideal Transformation</h3>
+			<p>Every Website Should be built with two primary goals: Firstly, it must work accross all devices. Secondly, it must be fast as possible.</p>
+			<p style="text-align: center;">
+ 							<a class="button" href="readmore.html">Read more</a>
+ 						</p>
+			</div>
+			
+			<div class="box">
+				<i class="far fa-user"></i>
+			<span>The Profile</span>
+			<h3>Web Development</h3>
+			<p>Every Website Should be built with two primary goals: Firstly, it must work accross all devices. Secondly, it must be fast as possible.</p>
+			<p style="text-align: center;">
+ 							<a class="button" href="readmore.html">Read more</a>
+ 						</p>
+			</div>
+
+			<div class="box">
+				<i class="far fa-bell"></i>
+			<span>The Profile</span>
+			<h3>Graphic Design</h3>
+			<p>Every Website Should be built with two primary goals: Firstly, it must work accross all devices. Secondly, it must be fast as possible.</p>
+			<p style="text-align: center;">
+ 							<a class="button" href="readmore.html">Read more</a>
+ 						</p>
+			</div>
+
+		</div>
+
+
+ 			</div>
+	</section>
+
+	<!--------------------HTML PortFolio Section------------------------->
+
+		<section class="blog" id="blog">
+			<h1 class="heading">
+				Welcome To <span>My Blog</span>
+			</h1>
+			<div class="box-container">
+				<div class="box">
+					<a href="blogpost1.html"><img src="photo1.png"></a> 
+				</div>
+
+				<div class="box">
+					<a href="blogpost2.html"><img src="photo2.jpg"></a> 
+				</div>
+
+				<div class="box">
+					<a href="blogpost1.html"><img src="photo1.png"></a> 
+				</div>
+				<div class="box">
+					<a href="blogpost3.html"><img src="digitalcam.jpg"> </a>
+				</div>
+
+				<div class="box">
+					<a href="blogpost2.html"><img src="photo2.jpg"></a> 
+				</div>
+				<div class="box">
+					<a href="blogpost3.html"><img src="digitalcam.jpg"> </a>
+				</div>
+
+			</div>
+		</section>
+
+
+		<section class="contact" id="contact">
+			<h1 class="heading">
+				<span>Contact</span> Me
+			</h1>
+			<div class="row">
+				<div class="content">
+					<h3 class="title">
+						Contact Info
+					</h3>
+				<div class="info">
+					<h3> <i class="fa fa-envelope"></i> mugishael07@gmail.com</h3>
+					<h3> <i class="fa fa-phone"></i> (+250) 786 076 029</h3>
+					<h3> <i class="fa fa-map-marker"></i> Kigali, RWANDA<br>
+					Kicukiro</h3>
+				</div>
+				</div>
+			<form>
+				<input type="text" placeholder="Your Name" class="box">
+				<input type="email" placeholder="Your Email" class="box">
+				<input type="text" placeholder="Your Project" class="box">
+				<textarea name="" id="" cols="30" rows="10" class="box message" placeholder="The Message"></textarea>
+				<button type="submit" class="button">Send <i class="fas fa-paper-plane"></i> </button>
+			</form>
+			</div>
+		</section>
+
+		<footer>
+ 			<p>Elisa MUGISHA</p>
+ 			<p>For more information: HTML, CSS, and Coding Guidance<br>
+ 			---Access My PlatForms---</p>
+ 			<div class="social">
+ 				<a href="www.facebook.com"><i class="fab fa-facebook-f"></i> </a>
+ 				<a href="www.instagram.com"><i class="fab fa-instagram"></i> </a>
+ 				<a href="www.gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+ 				<a href="www.github.com"><i class="fab fa-github"></i> </a>
+ 			</div>
+ 			<p class="end">CopyRight 2022 Elisa MUGISHA</p>
+ 		</footer>
+
+
+
+
+	<!--------------------HTML Script Part------------------------->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+	
+	$(document).ready(function(){
+		$('menu').click(function(){
+			$(this).toggleClass('fa-times');
+			$('header').toggleClass('toggle');
+		});
+		$(window).on('scroll load',function(){
+			$(this).removeClass('fa-times');
+			$('header').removeClass('toggle');
+		});
+
+	});
+
+</script>
+
+
+	
+	
+	
+
 </body>
 </html>
